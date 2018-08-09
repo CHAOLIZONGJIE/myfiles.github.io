@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>函数</title>
+</head>
+<body>
+    <script>
+        // 函数：函数是由事件驱动的或者当被调用的时候进行代码执行
+        // 函数可以对要重复执行的事情进行封装，将复杂的代码统一起来，提高代码的复用率
+
+        // 函数关键字： function
+        // 函数格式：
+        /*    1.声明   函数名，可以自定义
+              () 存放参数，可以不放，该参数是一个局部变量，作用域在函数体{}中，出函数就不能使用
+              {} 函数体，里面存放的是要执行的功能代码
+              function 函数名(){
+                  2.实现，放置要执行的功能代码
+              }
+
+              3.调用函数
+                 函数名()
+        */ 
+         
+        //  注意：函数会产生自己的作用域，所以在函数中定义的变量，出了函数后是无法使用
+
+        // 函数展现方式：
+        // 1. 无参无返回值
+        function num(){
+            console.log('没有参数没有返回')
+        }
+        // 函数名被调用几次，函数体中的代码就被执行几次，这样可以使得函数体中的代码的利用提高
+        num();
+        num();
+
+        // 2. 无参有返回值
+        // return 返回 是将函数体中的数据返出去，提供给函数体外部的代码使用
+        var a;
+        function num1(){
+             a =11;
+            var b =a+2;
+            var arr=[];
+            arr.push(a,b)
+            return arr;
+        }
+        console.log(num1());
+        console.log(a);
+        num1();
+
+        // 3.有参无返回值,参数可以多个，每个参数之间使用','隔开
+        function add(a,b){
+            console.log(a+b);
+        }
+        add('c','d');
+
+        // 4. 有参有返回值
+        function add1(a,b,c){
+            return a+b+c
+        }
+        console.log(add1(2,4,5))
+
+        console.clear();
+        function testNum(){
+            for(var i=0;i<10;i++){
+                if(i==5){
+                    // return;
+                    // break;
+                    continue;
+                }
+                console.log('当前i值为:'+i);
+            }
+            console.log('这个函数执行完毕')
+        }
+        testNum();
+
+        // return：不仅具有将函数内部的值返出去给函数外的代码使用，而且还有中断函数功能
+        // break：跳出当前的循环，中断循环，使得循环不再继续
+        // continue：跳过本次循环，直接执行后面的循环
+
+        // 匿名函数(没有函数名)
+        // 要么使用事件接收，要么使用变量接收
+        var text=function(){
+            console.log('这是匿名函数');
+        }
+        text();
+
+        
+        // 自运行函数
+        /* 
+        (function(){})()
+        */ 
+        (function(a,b){
+          console.log('自运行函数'+a+b);  
+        })(2,5)
+
+
+
+
+
+       
+      
+    </script>
+    
+</body>
+</html>
